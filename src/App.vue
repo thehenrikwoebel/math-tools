@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import MatrixInput from "@/components/matrix-input.vue";
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 let rows = ref(3);
 let result = ref(0);
 function spliceMatrix(matrix, column) {
@@ -38,10 +38,16 @@ function determinant(matrix) {
 
   return result;
 }
+
+
+onMounted(() => {
+  document.title = "Determinant Calculator";
+});
+
 </script>
 
 <template>
-  <h1 style="text-align: center">determinant calculator</h1>
+  <h1 style="text-align: center">Determinant Calculator</h1>
   <div id="container">
     <div class="label-row">
       <label for="input-n">n =</label>
